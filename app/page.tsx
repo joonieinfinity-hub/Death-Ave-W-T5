@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { db } from '../db';
+import { db } from '@/lib/db';
 
 export default async function HomePage() {
   const wines = await db.wines.getAll();
@@ -62,9 +62,6 @@ export default async function HomePage() {
                     className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                     <button className="w-full py-4 bg-white text-black text-[10px] uppercase tracking-widest font-black">View Bottle</button>
-                  </div>
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between items-baseline">

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { FALLBACK_SERVICES } from '../../constants';
+import { FALLBACK_SERVICES } from '@/lib/constants';
 
 export default function ServicesPage() {
   return (

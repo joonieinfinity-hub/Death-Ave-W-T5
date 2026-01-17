@@ -1,7 +1,7 @@
 
 import './globals.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 

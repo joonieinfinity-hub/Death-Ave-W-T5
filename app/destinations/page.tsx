@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { FALLBACK_SETTINGS } from '../../constants';
+import { FALLBACK_SETTINGS } from '@/lib/constants';
 
 export default function DestinationsPage() {
   return (

@@ -1,7 +1,6 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FALLBACK_SETTINGS } from '../constants';
+import Link from 'next/link';
+import { FALLBACK_SETTINGS } from '@/lib/constants';
 
 export default function Footer() {
   return (
@@ -17,10 +16,10 @@ export default function Footer() {
         <div>
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-burgundy mb-8">Navigation</h4>
           <ul className="space-y-4 text-xs uppercase tracking-widest font-bold">
-            <li><Link to="/wines" className="text-gray-400 hover:text-white transition-colors">The Cellar</Link></li>
-            <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">Our Origin</Link></li>
-            <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Tastings</Link></li>
-            <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Journal</Link></li>
+            <li><Link href="/wines" className="text-gray-400 hover:text-white transition-colors">The Cellar</Link></li>
+            <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">Our Origin</Link></li>
+            <li><Link href="/services" className="text-gray-400 hover:text-white transition-colors">Tastings</Link></li>
+            <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Journal</Link></li>
           </ul>
         </div>
 
@@ -54,11 +53,11 @@ export default function Footer() {
         </div>
       </div>
       
-      <div className="container mx-auto mt-32 pt-10 border-t border-white/5 flex flex-col md:row justify-between text-[8px] uppercase tracking-[0.5em] text-gray-700 font-bold">
+      <div className="container mx-auto mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between text-[8px] uppercase tracking-[0.5em] text-gray-700 font-bold">
         <p>&copy; {new Date().getFullYear()} Death Ave Wines. Crafted for the conscious.</p>
         <div className="flex space-x-8 mt-6 md:mt-0">
-          <Link to="/privacy">Privacy</Link>
-          <Link to="/terms">Terms</Link>
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/terms">Terms</Link>
         </div>
       </div>
     </footer>
