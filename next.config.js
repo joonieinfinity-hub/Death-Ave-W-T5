@@ -1,4 +1,3 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -15,14 +14,12 @@ const nextConfig = {
       },
     ],
   },
-  // Ensure the build process ignores the root entry points used by the SPA preview
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-      };
-    }
+  // We specify which files to ignore to avoid conflicts with legacy SPA files
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /index\.tsx|App\.tsx|pages\/.*\.tsx$/,
+      loader: 'ignore-loader',
+    });
     return config;
   },
 };
