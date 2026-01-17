@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Death Ave Wines | Conscious Drinking NYC</title>
+    <meta name="description" content="Curated low-intervention, boutique wines in Chelsea, NYC. Rooted in purity and industrial authenticity." />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --burgundy: #800020;
+        --dark-bg: #0a0a0a;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--dark-bg);
+        color: #e5e7eb;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4, .serif {
+        font-family: 'Playfair Display', serif;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      @keyframes slideDown {
+        from { transform: translateY(-30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+      .animate-slide-up { animation: slideUp 0.8s ease-out forwards; }
+      .animate-slide-down { animation: slideDown 0.8s ease-out forwards; }
+
+      .bg-burgundy { background-color: var(--burgundy); }
+      .text-burgundy { color: #a52a2a; }
+      
+      /* Custom selection */
+      ::selection {
+        background: var(--burgundy);
+        color: white;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--burgundy);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
