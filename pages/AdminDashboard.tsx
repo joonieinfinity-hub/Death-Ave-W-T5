@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, Routes, Route } from 'react-router-dom';
+import { Link, useNavigate, Routes, Route, useLocation } from 'react-router-dom';
 import { db } from '../db';
 import { Wine, Post } from '../types';
 
@@ -48,7 +48,7 @@ const AdminOverview = () => (
            <h2 className="text-2xl serif text-white italic mb-4">Live Preview</h2>
            <p className="text-white/70 text-sm">Changes are synchronized instantly across the storefront environment.</p>
          </div>
-         <Link to="/" target="_blank" className="relative z-10 text-[10px] uppercase tracking-widest font-black text-white border-b border-white/40 pb-1 self-start mt-12 hover:border-white">
+         <Link to="/" className="relative z-10 text-[10px] uppercase tracking-widest font-black text-white border-b border-white/40 pb-1 self-start mt-12 hover:border-white">
             Launch Site Explorer
          </Link>
          <div className="absolute -bottom-10 -right-10 text-[120px] font-black opacity-10 serif italic">DAW</div>
@@ -184,6 +184,7 @@ const ManageWines = () => {
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex selection:bg-burgundy selection:text-white">

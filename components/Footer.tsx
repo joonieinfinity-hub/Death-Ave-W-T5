@@ -3,72 +3,64 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FALLBACK_SETTINGS } from '../constants';
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-white/5 py-16 px-6">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div className="space-y-6">
-          <h2 className="text-2xl serif font-bold text-white italic">Death Ave Wines</h2>
-          <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-            Curated low-intervention wines and niche eclectic selections in the heart of NYC. Conscious drinking for a cleaner culture.
+    <footer className="bg-[#070707] border-t border-white/5 py-24 px-6 mt-32">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
+        <div className="col-span-1 md:col-span-1">
+          <h2 className="text-3xl font-black serif text-white tracking-tighter mb-8 italic">Death Ave <br/> Wines</h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs font-light">
+            Chelsea's premier destination for low-intervention, boutique wines and clean spirits. Curating the eclectic for the conscious enthusiast.
           </p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-burgundy transition-colors">Instagram</a>
-            <a href="#" className="text-gray-400 hover:text-burgundy transition-colors">Twitter</a>
+        </div>
+
+        <div>
+          <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-burgundy mb-8">Navigation</h4>
+          <ul className="space-y-4 text-xs uppercase tracking-widest font-bold">
+            <li><Link to="/wines" className="text-gray-400 hover:text-white transition-colors">The Cellar</Link></li>
+            <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">Our Origin</Link></li>
+            <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Tastings</Link></li>
+            <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Journal</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-burgundy mb-8">Visit Us</h4>
+          <div className="space-y-6 text-sm">
+            <p className="text-gray-400 font-light">{FALLBACK_SETTINGS.address}</p>
+            <p className="text-white font-bold">{FALLBACK_SETTINGS.phone}</p>
+            <div className="pt-4 space-y-2">
+              {Object.entries(FALLBACK_SETTINGS.hours).map(([day, hrs]) => (
+                <div key={day} className="flex justify-between text-xs text-gray-500">
+                  <span>{day}</span>
+                  <span>{hrs}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-widest font-bold text-white mb-6">Quick Links</h4>
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li><Link to="/wines" className="hover:text-white transition-colors">Our Collection</Link></li>
-            <li><Link to="/services" className="hover:text-white transition-colors">Weekly Tastings</Link></li>
-            <li><Link to="/about" className="hover:text-white transition-colors">Origin Story</Link></li>
-            <li><Link to="/blog" className="hover:text-white transition-colors">Wine Journal</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-xs uppercase tracking-widest font-bold text-white mb-6">Hours & Info</h4>
-          <ul className="space-y-4 text-sm text-gray-400">
-            {Object.entries(FALLBACK_SETTINGS.hours).map(([day, hours]) => (
-              <li key={day} className="flex justify-between max-w-[200px]">
-                <span>{day}</span>
-                <span className="text-white">{hours}</span>
-              </li>
-            ))}
-            <li className="pt-4 border-t border-white/10">
-              <span className="block">{FALLBACK_SETTINGS.address}</span>
-              <span className="block text-white mt-2 font-bold">{FALLBACK_SETTINGS.phone}</span>
-            </li>
-          </ul>
-        </div>
-
-        <div className="space-y-6">
-          <h4 className="text-xs uppercase tracking-widest font-bold text-white mb-6">Newsletter</h4>
-          <p className="text-sm text-gray-400">Never miss a tasting or new arrival.</p>
-          <div className="flex">
+          <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-burgundy mb-8">Newsletter</h4>
+          <p className="text-xs text-gray-500 mb-6 uppercase tracking-widest font-bold">Never miss a vintage.</p>
+          <div className="flex border-b border-white/10 pb-4">
             <input 
               type="email" 
-              placeholder="Email address" 
-              className="bg-[#1a1a1a] border border-white/10 px-4 py-3 text-sm w-full focus:outline-none focus:border-burgundy"
+              placeholder="YOUR EMAIL" 
+              className="bg-transparent text-white text-[10px] uppercase tracking-widest w-full focus:outline-none"
             />
-            <button className="bg-burgundy text-white px-6 py-3 uppercase tracking-tighter text-xs font-bold hover:bg-red-900 transition-colors">
-              Join
-            </button>
+            <button className="text-[10px] uppercase tracking-widest font-black text-white hover:text-burgundy transition-colors">Join</button>
           </div>
         </div>
       </div>
       
-      <div className="container mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:row justify-between text-[10px] uppercase tracking-widest text-gray-600">
-        <p>&copy; {new Date().getFullYear()} Death Ave Wines. All rights reserved.</p>
-        <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+      <div className="container mx-auto mt-32 pt-10 border-t border-white/5 flex flex-col md:row justify-between text-[8px] uppercase tracking-[0.5em] text-gray-700 font-bold">
+        <p>&copy; {new Date().getFullYear()} Death Ave Wines. Crafted for the conscious.</p>
+        <div className="flex space-x-8 mt-6 md:mt-0">
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
